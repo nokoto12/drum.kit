@@ -10,6 +10,12 @@ document.querySelectorAll(".drum")[i].addEventListener("click", function(){
     var buttonInnerHTML = this.innerHTML;
     
     makeSound(buttonInnerHTML);
+    
+    var buttonInnerHTML = this.innerHTML;
+    
+    makeSound(buttonInnerHTML);
+
+    buttonAnimation(buttonInnerHTML)
 
   });
 
@@ -60,9 +66,17 @@ function makeSound(key){
             break;
     
         default: 
-        var kick = new Audio('sounds/01-the-screaming-sheep.mp3');
-            kick.play();
+        var aaaaa = new Audio('sounds/01-the-screaming-sheep.mp3');
+            aaaaa.play();
             break;
+}
+    
+    function buttonAnimation(curruntKey) {
+    var activeButton = document.querySelector("." + curruntKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    }, 100)
 }
 
 
